@@ -111,6 +111,68 @@ print(order)
 convert_to_list = [count, order]
 print(convert_to_list)
 """
+"""
+bank_customer_bal = {}
+bank_customer_bal["Temitayo"] = 30000
+bank_customer_bal["Adeolu"] = 15000
 
-from typing import List
-print(dir(List))
+print(bank_customer_bal)
+print(bank_customer_bal["Adeolu"])
+"""
+
+state_capital = {
+    "Lagos": "Ikeja",
+    "Oyo": "Ibadan",
+    "Kogi": "Lokoja",
+    "Ogun": "Abeokuta"
+}
+
+"""
+print(state_capital)
+
+for state, capital in state_capital.items():
+    print(state,":", capital)
+
+for state in state_capital.values():
+    name = state.
+    print(state)
+
+#print(state_capital.)
+
+def veggies(veggies_name):
+
+"""
+
+fruit_categories = {
+    'fruit': {
+        'apple': {
+            'color': 'red',
+            'taste': 'sweet'
+        },
+        'banana': {
+            'color': 'yellow',
+            'taste': 'sweet'
+        }
+    },
+    'vegetable': {
+        'carrot': {
+            'color': 'orange',
+            'taste': 'crunchy'
+        },
+        'spinach': {
+            'color': 'green',
+            'taste': 'bitter'
+        }
+    }
+}
+
+
+def vitamins(category: str, values: dict):
+    for key, value in values.items():
+        for fruit, features in value.items():
+            if fruit == category:
+                color = features.get("color")
+                taste = features.get("taste")
+                print(f"{fruit} is a {key}, it is {color} in colour and has {taste} taste")
+
+vitamins("apple", fruit_categories)
