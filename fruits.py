@@ -30,4 +30,5 @@ def vitamins(category: str, values: dict):
                 taste = features.get("taste")
                 print(f"{fruit} is a {key}, it is {color} in colour and has {taste} taste")
 
-vitamins("apple", fruit_categories)
+vitamins("spinach", fruit_categories)
+
