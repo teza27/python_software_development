@@ -143,6 +143,7 @@ def veggies(veggies_name):
 
 """
 
+"""
 fruit_categories = {
     'fruit': {
         'apple': {
@@ -176,3 +177,115 @@ def vitamins(category: str, values: dict):
                 print(f"{fruit} is a {key}, it is {color} in colour and has {taste} taste")
 
 vitamins("apple", fruit_categories)
+"""
+
+"""
+category_1 = {"student1": 200, "student2": 350, "student3": 400}
+category_2 = {"teacher1": 600, "teacher2": 900, "teacher3": 700}
+category_1.update(category_2)
+print(category_1)
+
+category_3 = {**category_1, **category_2}
+print(category_3)
+"""
+
+"""
+def attendees_name(**names):
+    for key, value in names.items():
+        print("Hello,", key,":", value)
+
+attendees_name(name="temitayo", age=20, gender= "male")
+"""
+
+"""
+statement = "The Lord of host is a good Lord , The Lord is mighty in deed"
+def word_count(statement, *args):
+    state_split = statement.split()
+    print(state_split)
+    word_dict = {}
+    for char in args:
+        word_number = state_split.count(char)
+        word_dict[char] = word_number
+    print(word_dict)
+word_count(statement, "Lord", "host", "mighty", "deed", "The", "is")
+"""
+
+"""
+class Person:
+    def __init__(self, name, age, occupation):
+        self.name = name
+        self.age = age
+        self.occupation = occupation
+    def introduce(self):
+        print(f"Hello, my name is {self.name}, I am {self.age} years old and I work as a {self.occupation}")
+    def change_occupation(self, new_occupation):
+        self.occupation = new_occupation
+        print(f"Hello, my name is {self.name}, I am {self.age} years old and I work as a {self.occupation}")
+
+temitayo = Person("temitayo", 27, "Cloud Engineer")
+temitayo.introduce()
+temitayo.change_occupation("Python Developer")
+print(temitayo.occupation)
+"""
+
+"""
+class Animal():
+    # Base class or Parent class or Super class
+    def __init__(self):
+        pass
+    def breath():
+        print("Animal can breath")
+    def growth():
+        print("Animal can grow")
+class AquaticAnimal(Animal):
+    # sub class or child class or derived class
+    def __init__(self):
+        pass
+    def swim():
+        print("Aquatic animal can swim")
+
+fish = AquaticAnimal
+fish.breath()
+fish.growth()
+fish.swim()
+"""
+
+class Vehicles:
+    def __init__(self, manufacturer: str, model: str, year: int):
+        self.manufacturer = manufacturer
+        self.model = model
+        self.year = year
+    def get_details(self):
+        print(f"{self.manufacturer} {self.model} {self.year} model")
+
+class Car(Vehicles):
+    def __init__(self, manufacturer: str, model: str, year: int, num_door: int):
+        super().__init__(manufacturer, model, year)
+        self.num_door = num_door
+    def get_details(self):
+        print(f"The automobile {self.model} is made by {self.manufacturer} in the year {self.year} and has {self.num_door} doors")
+
+class Motorcycle(Vehicles):
+    def __init__(self, manufacturer: str, model: str, year: int, top_speed: float):
+        super().__init__(manufacturer, model, year)
+        self.top_speed = top_speed
+    def get_details(self):
+        print(f"The automobile {self.model} is made by {self.manufacturer} in the year {self.year} and a top speed of {self.top_speed}")
+        
+
+class Truck(Car):
+    def __init__(self, manufacturer: str, model: str, year: int, num_door, cargo_capacity: float):
+        super().__init__(manufacturer, model, year, num_door)
+        self.cargo_capacity = cargo_capacity
+    def get_details(self):
+        print(f"The automobile {self.model} is made by {self.manufacturer} in the year {self.year} and has {self.num_door} doors and cargo capacity of {self.cargo_capacity}")
+        
+    
+sedan_car = Car("Toyota", "Corolla", 2013, 4)
+sedan_car.get_details()
+
+power_bike = Motorcycle("BMW", "GT", 2013, "350MPH")
+power_bike.get_details()
+
+excation_truck = Truck("CAT", "Howo", 2010, 2, 40.5)
+excation_truck.get_details()
