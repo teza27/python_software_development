@@ -1,4 +1,4 @@
-#This code calculates and apply given discount to a customer purchase
+#This code calculates and apply given discount to a customer's purchase
 
 def discount_rate(rate_discounted: int):
 

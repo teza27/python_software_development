@@ -250,6 +250,7 @@ fish.growth()
 fish.swim()
 """
 
+"""
 class Vehicles:
     def __init__(self, manufacturer: str, model: str, year: int):
         self.manufacturer = manufacturer
@@ -289,3 +290,69 @@ power_bike.get_details()
 
 excation_truck = Truck("CAT", "Howo", 2010, 2, 40.5)
 excation_truck.get_details()
+"""
+
+# view = open(file="C:/Users/TEMITAYO-OLAIYA/OneDrive - systemspecs.com.ng/PAPSS/PAPSS Infrastructure Items/reporting module error.txt", mode="r")
+# print(view.read())
+
+# with open("C:/Users/TEMITAYO-OLAIYA/OneDrive - systemspecs.com.ng/PAPSS/PAPSS Infrastructure Items/reporting module error.txt","r") as newest:
+#     print(newest.read())
+
+
+# with open("new text.txt", "x"):
+#     pass
+"""
+with open("new text.txt", "w") as text_edit:
+   text_edit.write("Testing hwo to add content to existing blank doc")
+#print(text_edit())
+"""
+
+import csv
+# file = open("new text.txt","r")
+# print(file.read())
+
+# with open("new text.txt", "r") as new_file:
+#     print(new_file.read())
+#     #print(new_file)
+
+
+"""
+with open("Updated file.txt", "r") as updated_file:
+    print(updated_file.readlines())
+
+students = [
+    ["Name", "Age", "Class"],
+    ["Temitayo", 12, "Class 2"],
+    ["Adeolu", 19, "Class 4"],
+    ["Omot", 8, "Class 1"]
+]
+
+with open("student.csv", "w") as student_list:
+    writer = csv.writer(student_list)
+    writer.writerows(students)
+
+
+nigeria_data = [
+    ["State", "Capital", "Tribe"],
+    ["Lagos", "Ikeja", "Yoruba"],
+    ["Rivers", "Port Harcout", "Igbo"],
+    ["Jigawa", "Dutse", "Hausa"]
+]
+
+with open("state.csv", "w") as state_info:
+    nig = csv.writer(state_info)
+    nig.writerows(nigeria_data)
+
+with open("state.csv", "r") as read_state_info:
+    readFile = csv.reader(read_state_info)
+    for item in readFile:
+        print(item)
+"""
+
+adding_value = lambda x, y : x + y
+addition = adding_value(4, 5)
+print(addition)
+
+concat = lambda c, d : c + d
+merge = concat("Temi", "tayo")
+print(merge)
