@@ -348,7 +348,7 @@ with open("state.csv", "r") as read_state_info:
     for item in readFile:
         print(item)
 """
-
+"""
 adding_value = lambda x, y : x + y
 addition = adding_value(4, 5)
 print(addition)
@@ -356,3 +356,50 @@ print(addition)
 concat = lambda c, d : c + d
 merge = concat("Temi", "tayo")
 print(merge)
+"""
+
+"""
+def discount_rate(rate_discounted: int):
+
+    def total_cost():
+        cart_list = input("Enter the price of each item bought, seperated by a comma and space\n")
+        anew_cart = cart_list.split(", ")
+        a_list_item = [int(i) for i in anew_cart]
+        total = sum(a_list_item)
+        return lambda : f"You have received a discount of {(total * rate_discounted) / 100:.2f} and your total payment due is {total - ((total * rate_discounted) / 100):.2f}"
+    return total_cost
+discount_rate = discount_rate(10)
+print(discount_rate())
+"""
+
+from functools import reduce
+def operations(operation_type, a, b):
+    return operation_type(a, b)
+multiply = lambda a, b : a * b
+
+print(operations(multiply, 3, 6))
+
+multiplication = multiply(4, 6)
+print(multiplication)
+
+
+sample_data = [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.79, 1300, 5000, 3400, -150, -790, -3210, -1000, 8500, -30]
+
+savings = sum(filter(lambda x : x != 0, list(map(lambda x : round(x * 0.05 if x > 0 else 0, 2), sample_data))))
+print(f"Your total savings for the period is ${savings}")
+# filtered_savings = sum(list(filter(lambda x : x != 0, savings)))
+# print(filtered_savings)
+# savings_formatted = f"{savings:.2f}"
+# print(savings_formatted)
+total_amount = reduce(lambda x, y : x + y, sample_data)
+print(f"Total money you have received is ${total_amount}")
+
+sales_data = [
+    {"product": "Apple", "quantity": 5, "price": 2.5},
+    {"product": "Banana", "quantity": 10, "price": 1.75},
+    {"product": "Orange", "quantity": 8, "price": 3.0},
+    {"product": "Grapes", "quantity": 3, "price": 4.25},
+    {"product": "Mango", "quantity": 6, "price": 2.0},
+]
+filtered = reduce(lambda x, y : x + y, list(map(lambda sales: sales["quantity"] * sales["price"], list(filter(lambda data : data["product"] != "Grapes", sales_data)))))
+print(filtered)
