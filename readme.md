@@ -1,2 +1,3 @@
-This project contains code for different set of applications.
-I will update the content and the readme file as soon as possible
+# python_software_development
+Project and Materials on Python Software Development
+I am working on updating this repository and it should contain some useful information as soon as possible
