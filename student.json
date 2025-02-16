@@ -1,0 +1,44 @@
+{
+   "student_id": "20231234",
+   "first_name": "John",
+   "last_name": "Doe",
+   "age": 20,
+   "gender": "Male",
+   "department": "Computer Science",
+   "institution": "XYZ University",
+   "year_of_study": 3,
+   "courses": [
+      {
+         "course_code": "CSC101",
+         "course_name": "Introduction to Programming",
+         "grade": "A"
+      },
+      {
+         "course_code": "CSC203",
+         "course_name": "Data Structures",
+         "grade": "B+"
+      },
+      {
+         "course_code": "MTH202",
+         "course_name": "Calculus II",
+         "grade": "A-"
+      },
+      {
+         "course_code": "PHY105",
+         "course_name": "General Physics",
+         "grade": "B"
+      }
+   ],
+   "GPA": 3.75,
+   "email": "johndoe@xyzuniversity.edu",
+   "phone": "+234-8012345678",
+   "address": {
+      "street": "123 University Road",
+      "city": "Lagos",
+      "state": "Lagos",
+      "country": "Nigeria"
+   },
+   "scholarship": true,
+   "hostel_resident": false,
+   "date_of_birth": "2003-07-15"
+}

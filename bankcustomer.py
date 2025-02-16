@@ -372,7 +372,9 @@ discount_rate = discount_rate(10)
 print(discount_rate())
 """
 
+"""
 from functools import reduce
+import re
 def operations(operation_type, a, b):
     return operation_type(a, b)
 multiply = lambda a, b : a * b
@@ -401,5 +403,108 @@ sales_data = [
     {"product": "Grapes", "quantity": 3, "price": 4.25},
     {"product": "Mango", "quantity": 6, "price": 2.0},
 ]
-filtered = reduce(lambda x, y : x + y, list(map(lambda sales: sales["quantity"] * sales["price"], list(filter(lambda data : data["product"] != "Grapes", sales_data)))))
+filtered = reduce(lambda x, y : x + y, list(map(lambda sales: sales["quantity"] * sales["price"], list(filter(lambda data : data["product"] == "Grapes", sales_data)))))
 print(filtered)
+
+intro = "My name is Temitayo, A technical and cloud support engineer"
+
+id = re.compile(r"a")
+
+print(id.search(intro))
+alphabet = re.compile(r"a", flags=re.IGNORECASE)
+print(alphabet.findall(intro))
+"""
+
+"""
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_num = [i for i in numbers if i % 2 == 0]
+odd_num = [ i for i in numbers if i % 2 != 0]
+
+print(numbers)
+print(even_num)
+print(odd_num)
+
+user_details = {"name": "Temitayo", "class": "dept 2", "school": "school2"}
+
+details = {key : value for key, value in user_details.items() if key == "name"}
+
+print(details)
+"""
+
+"""
+try:
+    with open(r"new.txt", "r") as newfile:
+        newfile.read()
+
+except:
+    with open (r"newest.txt", "w") as writefile:
+        writefile.write("Here is a new file created and written to")
+
+else:
+    newfile.read()
+
+finally:
+    pass
+    # with open(r"newest.txt", "r") as openfile:
+    #     readup = openfile.read()
+    #     print(readup)
+
+with open(r"newest.txt", "r") as readafile:
+    content = readafile.read()
+    print(content)
+"""
+
+# Print sample student data
+
+import json
+student_data = {
+    "student_id": "20231234",
+    "first_name": "John",
+    "last_name": "Doe",
+    "age": 20,
+    "gender": "Male",
+    "department": "Computer Science",
+    "institution": "XYZ University",
+    "year_of_study": 3,
+    "courses": [
+        {"course_code": "CSC101", "course_name": "Introduction to Programming", "grade": "A"},
+        {"course_code": "CSC203", "course_name": "Data Structures", "grade": "B+"},
+        {"course_code": "MTH202", "course_name": "Calculus II", "grade": "A-"},
+        {"course_code": "PHY105", "course_name": "General Physics", "grade": "B"}
+    ],
+    "GPA": 3.75,
+    "email": "johndoe@xyzuniversity.edu",
+    "phone": "+234-8012345678",
+    "address": {
+        "street": "123 University Road",
+        "city": "Lagos",
+        "state": "Lagos",
+        "country": "Nigeria"
+    },
+    "scholarship": True,
+    "hostel_resident": False,
+    "date_of_birth": "2003-07-15"
+}
+
+# with open("data.json", "w") as textfile:
+#     json.dump(obj=student_data, fp=textfile, indent=3)
+# print(json.dumps(obj=student_data, indent=3))
+# print(serialised_dict)
+
+# deserialised_json = json.loads(serialised_dict)
+# print(deserialised_json)
+
+with open("student.json", "r") as student_info:
+    student_bio = json.load(student_info)
+    student_fname = student_bio["first_name"]
+    student_lname = student_bio["last_name"] 
+    student_bgrade = student_bio["courses"][0]["grade"]
+    student_country= student_bio['address']["country"]
+    print(f"{student_fname} {student_lname} best grade is {student_bgrade} and is from {student_country}")
+
+
+with open(r"store_data.json", "r") as product:
+    data = json.load(product)
+    get_brand = data["store"]["departments"][0]["categories"][1]["products"][1]["brand"]
+    get_name = data["store"]["departments"][0]["categories"][1]["products"][1]["name"]
+    print(f"{get_brand} {get_name}")
